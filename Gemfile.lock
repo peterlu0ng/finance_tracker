@@ -77,9 +77,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    alphavantage (1.2.0)
-      faraday (~> 1.4)
-      hashie (~> 4.1)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -104,7 +101,6 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
-    csv (3.3.0)
     date (3.3.4)
     debug (1.9.2)
       irb (~> 1.10)
@@ -119,39 +115,23 @@ GEM
     drb (2.2.1)
     erubi (1.12.0)
     execjs (2.9.1)
-    faraday (1.10.3)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0)
-      faraday-multipart (~> 1.0)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.0)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      faraday-retry (~> 1.0)
-      ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
-    faraday-retry (1.0.3)
+    faraday-net_http (3.1.0)
+      net-http
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashie (4.1.0)
-    httparty (0.22.0)
-      csv
-      mini_mime (>= 1.0.0)
-      multi_xml (>= 0.5.2)
+    hashie (5.0.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    iex-ruby-client (2.1.0)
+      faraday (>= 0.17)
+      faraday-multipart
+      hashie
+      money (~> 6.0)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -175,11 +155,13 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.22.3)
+    money (6.19.0)
+      i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
-    multi_xml (0.7.1)
-      bigdecimal (~> 3.1)
     multipart-post (2.4.1)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.11)
       date
       net-protocol
@@ -262,7 +244,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -296,6 +277,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.13.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -321,14 +303,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  alphavantage
   bootsnap
   bootstrap
   capybara
   debug
   devise (~> 4.9)
   devise-bootstrap-views (~> 1.0)
-  httparty
+  iex-ruby-client
   importmap-rails
   jbuilder
   pg (~> 1.1)

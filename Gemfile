@@ -74,5 +74,7 @@ gem "sassc-rails"
 gem "bootstrap"
 
 # Stock API
-gem 'alphavantage'
-gem 'httparty'
+gem 'iex-ruby-client'
+
+# gem 'alphavantage'
+# gem 'httparty'
