@@ -72,3 +72,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem "sassc-rails"
 
 gem "bootstrap"
+
+# Stock API
+gem 'alphavantage'
+gem 'httparty'
