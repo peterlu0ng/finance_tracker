@@ -78,3 +78,5 @@ gem 'iex-ruby-client'
 
 # gem 'alphavantage'
 # gem 'httparty'
+
+gem "font-awesome-rails"
