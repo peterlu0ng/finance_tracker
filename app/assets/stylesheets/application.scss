@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "font-awesome";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -21,4 +23,12 @@
 
 .search-area{
     padding-top: 50px;
+}
+
+.no-right-padding{
+    padding-right: 0 !important;
+}
+
+.no-left-padding{
+    padding-left: 0 !important;
 }
