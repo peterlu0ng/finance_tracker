@@ -11,8 +11,9 @@
                 <% link_style =  (request.path == my_portfolio_path)? 'nav-link active' : 'nav-link' %>
                 <%= link_to 'My Portfolio', my_portfolio_path, class: link_style %>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Features</a>
+              <li class="nav-item">
+                <% link_style =  (request.path == friends_path)? 'nav-link active' : 'nav-link' %>
+                <%= link_to 'Friends', friends_path, class: link_style %>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#">Pricing</a>
