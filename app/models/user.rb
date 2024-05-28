@@ -28,4 +28,14 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}" if first_name || last_name
     "#{email}"
   end
+
+  def self.search(entry)
+    entry.strip!
+
+    matches = (
+      where( "first_name like ?", "%#{entry}%" ) +
+      where( "last_name  like ?", "%#{entry}%" ) +
+      where( "email      like ?", "%#{entry}%" )
+    ).uniq
+  end
 end

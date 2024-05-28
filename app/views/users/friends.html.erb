@@ -2,10 +2,10 @@
 
 <div class="search-area">
     <h3>Search Friends</h3>
-    <%= form_with url: search_stock_path, method: "get", local: false, data: {turbo: false} do  %>
+    <%= form_with url: search_friend_path, method: "get", local: false, data: {turbo: false} do  %>
         <div class="form-group row">
             <div class="col-sm-9 no-right-padding">
-                <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form control-lg"%>
+                <%= text_field_tag :friend, params[:friend], placeholder: "Name or email", autofocus: true, class: "form-control form control-lg"%>
             </div>
             <div class="col-sm-3 no-left-padding">
                 <%= button_tag type: :submit, class: "btn btn-success" do %>
@@ -15,7 +15,10 @@
         </div>
     <% end %>
 </div>
+<div id="friend-results">
 
-<% if !@friends.empty? %>
+</div>
+
+<% if !@friends.empty? %>   
     <%= render 'friends/list'%>
 <% end %>
