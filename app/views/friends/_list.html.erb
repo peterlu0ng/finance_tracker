@@ -16,7 +16,7 @@
                 <td><%= friend.first_name %></td>
                 <td><%= friend.last_name  %></td>
                 <td>
-                    <%= link_to 'Stop following', '#', data: {confirm: 'Are you sure?', turbo_method: :delete},
+                    <%= link_to 'Stop following', friendship_path(friend), data: {confirm: 'Are you sure?', turbo_method: :delete},
                                                 class:'btn btn-sm btn-warning' %>
                 </td>
                 </tr>

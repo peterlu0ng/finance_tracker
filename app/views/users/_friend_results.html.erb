@@ -6,16 +6,14 @@
   <div class="card bg-light mb-3 card-body results-block">
     <table class="col-md-12">
       <tbody>
-  
         <% @friends.each do |friend| %>
           <tr>
             <td><strong>Name: </strong> <%= friend.full_name %></td>
             <td><strong>Email: </strong> <%= friend.email %></td>
             <td><strong>Actions: </strong> <%= link_to 'View Profile', '#', class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to 'Follow', '#', class: "btn btn-sm btn-success", method: :post %></td>
+            <td><%= link_to 'Follow', friendships_path(friend: friend), class: "btn btn-sm btn-success", data: {turbo_method: :post} %></td>
           </tr>
         <% end %>
-
       </tbody>
     </table>
   </div>
