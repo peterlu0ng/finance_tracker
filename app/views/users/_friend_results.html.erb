@@ -10,8 +10,13 @@
           <tr>
             <td><strong>Name: </strong> <%= friend.full_name %></td>
             <td><strong>Email: </strong> <%= friend.email %></td>
-            <td><strong>Actions: </strong> <%= link_to 'View Profile', '#', class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to 'Follow', friendships_path(friend: friend), class: "btn btn-sm btn-success", data: {turbo_method: :post} %></td>
+            <td><strong>Actions: </strong> <%= link_to 'View Profile', user_path(friend), class: "btn btn-sm btn-success" %>
+            <% if current_user.not_friends_with?(friend.id) %>
+            <%= link_to 'Follow', friendships_path(friend: friend), class: "btn btn-sm btn-success", data: {turbo_method: :post} %>
+            <% else %>
+              <span class="badge text-bg-secondary">You are already friends</span>
+              <% end %>
+              </td>
           </tr>
         <% end %>
       </tbody>
